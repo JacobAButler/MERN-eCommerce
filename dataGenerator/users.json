@@ -1,5 +1,15 @@
 {
-    "name": "jake",
-    "age": 31,
-    "gender": "male"
+    "user_name": "Marquerite Makris",
+    "user_address": "572 internal Cir",
+    "user_email": "address@email.com",
+    "user_phone": "3319295520",
+    "user_cart": {
+        "items": [
+            "5ea66b8aee05f74b7da65ee6",
+            "5ea66bafee05f74b7da65ee7"
+        ],
+        "total": 0,
+        "formattedTotal": "0.0"
+    },
+    "user_active": true
 }
