@@ -1,26 +1,65 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import './CSS/App.css';
+import NavBar from './components/NavBar';
+import Card from './components/productCard';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+
+      <Grid>
+        <Row>
+          <NavBar/>
+        </Row>
+        <Col xs={12} sm={4} lg={3}>
+          <Card/>
+        </Col><Col xs={12} sm={4} lg={3}>
+          <Card/>
+        </Col><Col xs={12} sm={4} lg={3}>
+          <Card/>
+        </Col><Col xs={12} sm={4} lg={3}>
+          <Card/>
+        </Col><Col xs={12} sm={4} lg={3}>
+          <Card/>
+        </Col>
+
+
+        <Row>
+
+        </Row>
+      </Grid>
+
+
+
+
+
+
+      // <div className="outerContainer">
+      //   <Row>
+      //     <NavBar/>
+      //   </Row>
+      //
+      //   <div className="productContainer">
+      //     <Row>
+      //       <Col xs />
+      //
+      //       <Col xs />
+      //     </Row>
+      //     <Row>
+      //       <Col xs />
+      //       <Card/><Card/><Card/><Card/>
+      //       <Col xs />
+      //       <Col xs />
+      //     </Row>
+      //   </div>
+      //
+      //
+      //
+      //
+      // </div>
+    );
+  }
 }
 
 export default App;

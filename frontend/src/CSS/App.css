@@ -1,0 +1,34 @@
+
+
+/* @keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+.cardDisplay
+{
+  display: grid;
+}
+
+.outerContainer
+{
+  position: relative;
+  width: auto;
+}
+.navBarContainer
+{
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  background-color: red;
+}
+
+.productContainer
+{
+  position: relative;
+  width: auto;
+  height: auto;
+}
