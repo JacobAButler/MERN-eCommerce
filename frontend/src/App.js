@@ -4,29 +4,24 @@ import NavBar from './components/NavBar';
 import Card from './components/productCard';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
+
+const names = ['James', 'Paul', 'John', 'George', 'Ringo'];
 class App extends Component {
+
   render() {
     return (
 
-      <Grid>
+      <Grid className = "Grid">
         <Row>
           <NavBar/>
         </Row>
-        <Col xs={12} sm={4} lg={3}>
-          <Card/>
-        </Col><Col xs={12} sm={4} lg={3}>
-          <Card/>
-        </Col><Col xs={12} sm={4} lg={3}>
-          <Card/>
-        </Col><Col xs={12} sm={4} lg={3}>
-          <Card/>
-        </Col><Col xs={12} sm={4} lg={3}>
-          <Card/>
-        </Col>
-
 
         <Row>
-
+        {names.map(name => (
+          <Col xs={12} sm={5} lg={3}>
+            <Card/>
+          </Col>
+        ))}
         </Row>
       </Grid>
 
