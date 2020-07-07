@@ -38,8 +38,8 @@ class App extends Component {
           <Row>
           {this.state.data.map(product => (
             <Col xs={12} sm={5} lg={3}>
-              <Container triggerText={product.product_name} />
-              <Card product={product}/>
+              <Container triggerText={product.product_name} props={product}/>
+
             </Col>
           ))}
           </Row>

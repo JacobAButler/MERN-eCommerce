@@ -3,7 +3,7 @@ import noImage from '../../../Images/noImage.png'
 const Trigger = ({ triggerText, buttonRef, showModal }) => {
   return (
     <div
-      className="btn btn-lg btn-danger center modal-button"
+      className="btn btn-lg center modal-button"
       ref={buttonRef}
       onClick={showModal}
     >
