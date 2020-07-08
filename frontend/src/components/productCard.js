@@ -2,19 +2,20 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import noImage from '../Images/noImage.png';
 
-function Card() {
+function Card(props) {
+  let linkPath = "http://localhost:4000/shopping/products/".concat(props.product._id)
   return (
-    <div className="card mb-3" style={{top: 20, width: 200}}>
-      <h3 className="card-header" style={{border: '2px solid'}}>Card Header</h3>
-      <div className="card-body">
-        <h5 className="card-title">Special title treatment</h5>
-        <h6 className="card-subtitle text-muted">Support card subtitle</h6>
+    <a href={linkPath}>
+      <div className="card mb-3" style={{top: 20, width: 200}}>
+        <h3 className="card-header" style={{border: '2px solid'}}>{props.product.product_name}</h3>
+        <div className="card-body">
+        </div>
+        <img style={{width: 200, height: 100}} src={noImage} alt={noImage}/>
+        <div className="card-body">
+          <p className="card-text">{props.product.product_description}</p>
+        </div>
       </div>
-      <img style={{width: 200, height: 100}} src={noImage} alt={noImage}/>
-      <div className="card-body">
-        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
+    </a>
   )
 }
 

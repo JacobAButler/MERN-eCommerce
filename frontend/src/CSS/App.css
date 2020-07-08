@@ -8,27 +8,8 @@
     transform: rotate(360deg);
   }
 } */
-.cardDisplay
+.Grid
 {
-  display: grid;
-}
-
-.outerContainer
-{
-  position: relative;
-  width: auto;
-}
-.navBarContainer
-{
-  position: absolute;
-  width: 100%;
-  height: 10%;
-  background-color: red;
-}
-
-.productContainer
-{
-  position: relative;
-  width: auto;
-  height: auto;
+  width:100%;
+  padding-top: 80px;
 }
