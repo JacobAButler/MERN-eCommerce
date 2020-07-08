@@ -29,6 +29,10 @@ let product = new Schema({
 
   product_active:{
     type: Boolean
+  },
+
+  product_images:{
+    type: [String]
   }
 
 });
