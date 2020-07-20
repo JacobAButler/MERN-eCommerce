@@ -8,7 +8,7 @@ export const Form = ({
   return (
     <form onSubmit={onSubmit}>
       <div className="imageCarousel">
-        <img style={{width: 400, height: 200}} src={noImage} alt={noImage}/>
+        <img style={{width: 400, height: 200}} src={product.product_images[0]} alt={noImage}/>
       </div>
       <div className="productInfo">
         <h1 className ="productName">{product.product_name}</h1>
