@@ -14,6 +14,12 @@ const PORT = 4000;
 /* import the model file for the user */
 let USER = require('./models/user.model');
 let PRODUCT = require('./models/product.model');
+
+
+
+
+
+
 app.use(cors());
 app.use(bodyParser.json());
 /* create a connection to the mongoDb database */
