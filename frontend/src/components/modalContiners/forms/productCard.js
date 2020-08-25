@@ -12,8 +12,8 @@ import { useDispatch } from 'react-redux';
 function foo(images)
 {
   return(
-      images.map(image => (
-        <div>
+      images.map((image,index) => (
+        <div key={index}>
           <img src={image} alt={noImage} />
         </div>
       ))
@@ -55,7 +55,7 @@ export const ProductCard = ({
           display: 'inline-block',
           fontSize: '18px',
         }}
-        onClick={() => dispatch(add())}
+        onClick={() => dispatch(add({item:product,quantity:1}))}
         
       >Add to Cart</button>
     </div>
