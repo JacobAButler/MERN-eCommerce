@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Form } from './form/form';
 import FocusTrap from 'focus-trap-react';
+
 export const Modal = ({
   onClickOutside,
   onKeyDown,
@@ -9,7 +10,7 @@ export const Modal = ({
   buttonRef,
   closeModal,
   onSubmit,
-  product
+  info
 }) => {
   return ReactDOM.createPortal(
     <FocusTrap>
@@ -38,7 +39,7 @@ export const Modal = ({
             </svg>
           </button>
           <div className="modal-body">
-            <Form onSubmit={onSubmit} product={product}/>
+            <Form onSubmit={onSubmit} info={info}/>
           </div>
         </div>
       </aside>
