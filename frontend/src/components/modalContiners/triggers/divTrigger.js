@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../../logo.svg'
+import logo from '../../../Images/logo.svg'
 const DivTrigger = ({ triggerText, buttonRef, showModal, triggerImage }) => {
   return (
     <div

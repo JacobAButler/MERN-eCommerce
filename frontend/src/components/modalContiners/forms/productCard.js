@@ -25,12 +25,9 @@ function cartCheck(cart, product)
   let isItemInCart=false;
   cart.forEach(element => {
 
-    console.log('eleID: ',element.item._id,' prodID: ',product._id)
 
     if(element.item._id==product._id)
     {
-      console.log('__inIF elementId=',element.item._id)
-      console.log('__inIF productID=',product._id)
       isItemInCart=true
     }
   });
