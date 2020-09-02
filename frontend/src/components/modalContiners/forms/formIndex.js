@@ -7,8 +7,6 @@ import Error from './errorCard';
 
 
 export class Forms extends Component {
-    // when I need to add ACTUAL forms. the onSubmit method needs to be 
-    // passed to the form
     formSwitch(type){
         switch(type){
             case 'product':

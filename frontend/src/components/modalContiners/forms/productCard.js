@@ -6,10 +6,10 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 //import { Footer } from 'react-image-carousel/lib/Footer';
 
-import { add } from '../../../slices/cartSlice';
-import { useDispatch } from 'react-redux';
+import { add, getCart } from '../../../slices/cartSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
-function foo(images)
+function createImageContainer(images)
 {
   return(
       images.map((image,index) => (
@@ -19,17 +19,35 @@ function foo(images)
       ))
       )
 }
+
+function cartCheck(cart, product)
+{
+  let isItemInCart=false;
+  cart.forEach(element => {
+
+    console.log('eleID: ',element.item._id,' prodID: ',product._id)
+
+    if(element.item._id==product._id)
+    {
+      console.log('__inIF elementId=',element.item._id)
+      console.log('__inIF productID=',product._id)
+      isItemInCart=true
+    }
+  });
+  return isItemInCart;
+}
 export const ProductCard = ({ 
   onSubmit,
   product
  }) => {
+  const cartList = useSelector(getCart);
   const dispatch = useDispatch();
   return (
     <div>
     <form onSubmit={onSubmit}>
       <div className="imageCarousel">
         <Carousel>
-          {foo(product.product_images)}
+          {createImageContainer(product.product_images)}
         </Carousel>
       </div>
       <div className="productInfo">
@@ -55,7 +73,14 @@ export const ProductCard = ({
           display: 'inline-block',
           fontSize: '18px',
         }}
-        onClick={() => dispatch(add({item:product,quantity:1}))}
+        onClick={() => {
+
+          if(cartCheck(cartList,product)==false)
+          {
+            dispatch(add({item:product,quantity:1}))
+
+          }
+        }}
         
       >Add to Cart</button>
     </div>

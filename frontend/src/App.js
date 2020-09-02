@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+
 import './App.css';
 
 import Faker from 'faker';
@@ -94,7 +93,6 @@ class App extends Component {
           }
           
           </Row>
-          <Counter />
         </Grid>
 
 
