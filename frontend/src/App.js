@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './App.css';
+import './CSS/App.css';
 
 import Faker from 'faker';
 import Container from './components/modalContiners/container';
@@ -35,7 +35,7 @@ class App extends Component {
   }
 
   getFakerData(){
-    const total=32;
+    const total=23;
     let counter;
     const response = [];
 
@@ -72,29 +72,68 @@ class App extends Component {
 
   render() {
     return (
-        <Grid className = "Grid">
-          <Container triggerText={'Login'} triggerType={'button'} formType={'login'} />
-          <Container triggerText={'Register'} triggerType={'button'} formType={'register'}/>
-          <Container triggerText={'Cart'} triggerType={'button'} formType={'cart'} />
-          <Row>
-            <NavBar/>
-          </Row>
-
-          <Row>
-          {this.state.data.map(product => (
-            <Col xs={12} sm={5} lg={3} key={product._id.toString()}>
-              {/* <Container triggerText={product.product_name} props={product}/> */}
-              <Container triggerText={product.product_name} triggerType={'image'} formType={'product'} info={product} triggerImage={product.product_images[0]} />
-            <div>{product.product_name}</div>
-
+      <div className="App">
+        <Grid className='appGrid'>
+          <Row className='headerRow'>
+            <Col className='NavBarColumn' >
+            <NavBar className='NavBar'/>
             </Col>
-            
-          ))
-          }
-          
+            <Col className='headerButtonsColumn' end='xs'>
+              <Row className='loginLogoutRow'>
+                <Col className='loginButtonCol'>
+                  <Container 
+                    className = "login"
+                    triggerText={'Login'} 
+                    triggerType={'button'} 
+                    formType={'login'} />
+                </Col>
+                <Col className='registerButtonCol'>
+                  <Container className = 'register'
+                    triggerText={'Register'} 
+                    triggerType={'button'} 
+                    formType={'register'}/>
+                </Col>
+              </Row>
+              <Row className='cartButtonCol'>
+                <Container 
+                  className = 'cart'
+                  triggerText={'Cart'} 
+                  triggerType={'button'} 
+                  formType={'cart'}/>
+              </Row>
+            </Col>
+            this
+          </Row>
+          <Row className='bodyRow'>
+            <Col className='bodyRowSidePane'>this</Col>
+            <Col className='bodyRowMainView'>
+              <Row>
+              {this.state.data.map(product => (
+                <Col className='product' xOffset={11} xs={12} sm={5} lg={3} key={product._id.toString()} >
+                  <Container
+                    className = 'productCard' 
+                    triggerText={product.product_name} 
+                    triggerType={'image'} 
+                    formType={'product'} 
+                    info={product} 
+                    triggerImage={product.product_images[0]}/>
+                    <div>{product.product_name}</div>
+
+                </Col>
+                ))}
+                </Row>
+            </Col>
+          </Row>
+          <Row className='footerRow'>
+            this footer
           </Row>
         </Grid>
 
+
+
+
+
+      </div>
 
     );
   }

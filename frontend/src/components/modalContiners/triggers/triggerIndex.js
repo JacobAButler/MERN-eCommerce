@@ -38,7 +38,7 @@ export class Trigger extends Component {
   }
   render() {
     return (
-      <div>
+      <div style = {{width: "150px"}}>
         {this.triggerSwitch(this.props.triggerType)}
       </div>
     )

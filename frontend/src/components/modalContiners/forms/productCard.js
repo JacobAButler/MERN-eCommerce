@@ -1,5 +1,6 @@
 import React from 'react';
 import noImage from '../../../Images/noImage.png';
+import '../../../CSS/productCard.css';
 
 import ReactDOM from 'react-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -40,7 +41,9 @@ export const ProductCard = ({
   const cartList = useSelector(getCart);
   const dispatch = useDispatch();
   return (
-    <div>
+    <div className='card'>
+      <h1 className ="productHeader">{product.product_name}</h1>
+      <br/>
     <form onSubmit={onSubmit}>
       <div className="imageCarousel">
         <Carousel>
@@ -53,9 +56,13 @@ export const ProductCard = ({
         <p className = "productPrice">{product.product_price}</p>
 
       </div>
+      <br/>
+      <br/>
+      <br/>
       
     </form>
     <button
+        className='cartButton'
         style={{
           width: "150px",
           borderRadius: "3px",
