@@ -1,50 +1,50 @@
-import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
-import '../CSS/navBar.css'
+import React, { Component } from 'react'
 
-function NavBar() {
-  return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <Link className="navbar-brand" to="/">
-        Shop
-      </Link>
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { ButtonContainer } from './Button'
 
-      <form className="form-inline my-2 my-lg-0">
-        <input className="form-control mr-sm-2" type="text" placeholder="Search"/>
-        <button className="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </nav>
-  );
+
+
+
+export default class NavBar extends Component {
+    render() {
+        return (
+            <NavWrapper className='navbar navbar-expand-sm navbar-dark px-sm-5'>
+                {/*
+                https://www.iconfinder.com/icons/1243689/call_phone_icon
+                Creative Commons (Attribution 3.0 Unported);
+                https://www.iconfinder.com/Makoto_msk */}
+
+                <Link to='/'>
+                    <h1>logo</h1>
+                </Link>
+                <ul className='navbar-nav align-items-center'>
+                    <li className='nav-item ml-5'>
+                        <Link to='/' className='nav-link'>
+                            products
+                        </Link>
+                    </li>
+                </ul>
+                <Link to='/cart' className='ml-auto'>
+                    <ButtonContainer>
+                        <span className='mr-2'>
+                            <i className='fas fa-cart-plus' />
+                        </span>
+                        my cart
+                    </ButtonContainer>
+                </Link>
+
+            </NavWrapper>
+        )
+    }
 }
 
-export default NavBar;
-
-
-
-// <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-//   <a class="navbar-brand" href="#">Navbar</a>
-//   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-//     <span class="navbar-toggler-icon"></span>
-//   </button>
-//
-//   <div class="collapse navbar-collapse" id="navbarColor02">
-//     <ul class="navbar-nav mr-auto">
-//       <li class="nav-item active">
-//         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-//       </li>
-//       <li class="nav-item">
-//         <a class="nav-link" href="#">Features</a>
-//       </li>
-//       <li class="nav-item">
-//         <a class="nav-link" href="#">Pricing</a>
-//       </li>
-//       <li class="nav-item">
-//         <a class="nav-link" href="#">About</a>
-//       </li>
-//     </ul>
-//     <form class="form-inline my-2 my-lg-0">
-//       <input class="form-control mr-sm-2" type="text" placeholder="Search">
-//       <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-//     </form>
-//   </div>
-// </nav>
+const NavWrapper = styled.nav`
+    background:var(--mainBlue);
+    .nav-link{
+        color:var(--mainWhite)!important;
+        font-size:1.3rem;
+        text-transform:capitalize;
+    }
+`
