@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-
 import './CSS/App.css';
 
+import { Switch, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Faker from 'faker';
 import Container from './components/modalContiners/container';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import NavBar from './components/NavBar';
+import ErrorPage from './components/ErrorPage'
+import ProductList from './components/ProductList';
+
 
 
 
@@ -72,68 +76,76 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Grid className='appGrid'>
-          <Row className='headerRow'>
-            <Col className='NavBarColumn' >
-            <NavBar className='NavBar'/>
-            </Col>
-            <Col className='headerButtonsColumn' end='xs'>
-              <Row className='loginLogoutRow'>
-                <Col className='loginButtonCol'>
-                  <Container 
-                    className = "login"
-                    triggerText={'Login'} 
-                    triggerType={'button'} 
-                    formType={'login'} />
-                </Col>
-                <Col className='registerButtonCol'>
-                  <Container className = 'register'
-                    triggerText={'Register'} 
-                    triggerType={'button'} 
-                    formType={'register'}/>
-                </Col>
-              </Row>
-              <Row className='cartButtonCol'>
-                <Container 
-                  className = 'cart'
-                  triggerText={'Cart'} 
-                  triggerType={'button'} 
-                  formType={'cart'}/>
-              </Row>
-            </Col>
-            this
-          </Row>
-          <Row className='bodyRow'>
-            <Col className='bodyRowSidePane'>this</Col>
-            <Col className='bodyRowMainView'>
-              <Row>
-              {this.state.data.map(product => (
-                <Col className='product' xOffset={11} xs={12} sm={5} lg={3} key={product._id.toString()} >
-                  <Container
-                    className = 'productCard' 
-                    triggerText={product.product_name} 
-                    triggerType={'image'} 
-                    formType={'product'} 
-                    info={product} 
-                    triggerImage={product.product_images[0]}/>
-                    <div>{product.product_name}</div>
 
-                </Col>
-                ))}
-                </Row>
-            </Col>
-          </Row>
-          <Row className='footerRow'>
-            this footer
-          </Row>
-        </Grid>
+      <React.Fragment>
+        <NavBar />
+        <Switch>
+          <Route exact path='/' component={ProductList} />
+          <Route component={ErrorPage} />
+        </Switch>
+      </React.Fragment>
+      // <div className="App">
+      //   <Grid className='appGrid'>
+      //     <Row className='headerRow'>
+      //       <Col className='NavBarColumn' >
+      //       <NavBar className='NavBar'/>
+      //       </Col>
+      //       <Col className='headerButtonsColumn' end='xs'>
+      //         <Row className='loginLogoutRow'>
+      //           <Col className='loginButtonCol'>
+      //             <Container 
+      //               className = "login"
+      //               triggerText={'Login'} 
+      //               triggerType={'button'} 
+      //               formType={'login'} />
+      //           </Col>
+      //           <Col className='registerButtonCol'>
+      //             <Container className = 'register'
+      //               triggerText={'Register'} 
+      //               triggerType={'button'} 
+      //               formType={'register'}/>
+      //           </Col>
+      //         </Row>
+      //         <Row className='cartButtonCol'>
+      //           <Container 
+      //             className = 'cart'
+      //             triggerText={'Cart'} 
+      //             triggerType={'button'} 
+      //             formType={'cart'}/>
+      //         </Row>
+      //       </Col>
+      //       this
+      //     </Row>
+      //     <Row className='bodyRow'>
+      //       <Col className='bodyRowSidePane'>this</Col>
+      //       <Col className='bodyRowMainView'>
+      //         <Row>
+      //         {this.state.data.map(product => (
+      //           <Col className='product' xOffset={11} xs={12} sm={5} lg={3} key={product._id.toString()} >
+      //             <Container
+      //               className = 'productCard' 
+      //               triggerText={product.product_name} 
+      //               triggerType={'image'} 
+      //               formType={'product'} 
+      //               info={product} 
+      //               triggerImage={product.product_images[0]}/>
+      //               <div>{product.product_name}</div>
+
+      //           </Col>
+      //           ))}
+      //           </Row>
+      //       </Col>
+      //     </Row>
+      //     <Row className='footerRow'>
+      //       this footer
+      //     </Row>
+      //   </Grid>
 
 
 
 
 
-      </div>
+      // </div>
 
     );
   }

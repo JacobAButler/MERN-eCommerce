@@ -22,14 +22,8 @@ html, body, #root {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: navy;
 }
 
-/* #root
-{
-  height: 94%;
-  width:94%
-} */
 
 .App{
   height: 100vh;
